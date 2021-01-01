@@ -99,7 +99,7 @@ class dbstore:
 			self.data=helperfunctions.read_file(self.path)
 			# print(self.data)
 			if key not in self.data:
-				raise Exception("The Given key is not found Enter another Key..")
+				raise Exception("The Given key {} is not found Enter another Key..".format(key))
 			else:
 				key_data = self.value(self.data[key][0],self.data[key][1])
 				if 	key_data.ttl<time.time():
