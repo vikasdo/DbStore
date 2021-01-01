@@ -8,6 +8,7 @@ start = time.perf_counter()
 threads = []
 obj=dbstore()
 
+# This loop is to add Keys in DB STORE
 for i in range(4):
     
     secs = [('name','vikas',113),('street','canal lane',3),('city','hyderabad',2),('phone2',9392322121,322),('states','Telangana',1)]
@@ -20,6 +21,9 @@ for i in range(4):
 for thread in threads:
     thread.join()
 
+
+# This loop is to READ Keys in DB STORE
+
 for i in range(4):
     
     secs = [('name','vikas',113),('street','canal lane',3),('city','hyderabad',2),('phone2',9392322121,322),('states','Telangana',1)]
@@ -31,6 +35,9 @@ for i in range(4):
 
 for thread in threads:
     thread.join()
+
+
+# This loop is to DELETE Keys in DB STORE
 
 for i in range(1):
     
@@ -45,4 +52,5 @@ for thread in threads:
     thread.join()
 finish = time.perf_counter()
 
+#measure The Performance of it...
 print(f'Finished in {round(finish-start, 2)} second(s)')
