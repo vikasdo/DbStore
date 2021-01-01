@@ -7,7 +7,11 @@
 
 To implement make an object which is in implementation.py
 
-### Table of input
-
+### Implementation
+'''
 ![code](https://github.com/vikasdo/DbStore/blob/main/screenshots/code.JPG)
+'''
+### output
+'''
 ![output](https://github.com/vikasdo/DbStore/blob/main/screenshots/Capture.JPG)
+'''
