@@ -86,7 +86,7 @@ class dbstore:
 					print("The Value for {} : {}".format(key,val))
 				else:
 
-					raise Exception("The Given key Time to live has been expired.")
+					raise Exception("The Given key :"+key+" Time to live has been expired.")
 			
 		except Exception as e:
 			print("The error is {} ".format(e))
@@ -99,16 +99,16 @@ class dbstore:
 			self.data=helperfunctions.read_file(self.path)
 			# print(self.data)
 			if key not in self.data:
-				raise Exception("The Given key {} is not found Enter another Key..".format(key))
+				raise Exception("The Given key '{}' is not found Enter another Key..".format(key))
 			else:
 				key_data = self.value(self.data[key][0],self.data[key][1])
 				if 	key_data.ttl<time.time():
 					del self.data[key]
 					helperfunctions.write_file(self.path,self.data)
 
-					print(f"The key : {key} is deleted now ...")
+					print(f"The key : '{key}' is deleted now ...")
 				else:
-					raise Exception("The Given key: {} Time to live has been expired.".format(key))
+					raise Exception("The Given key: '{}' Time to live has been expired.".format(key))
 
 		except Exception as e:
 			print("The error is {} ".format(e))

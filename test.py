@@ -32,7 +32,7 @@ for i in range(4):
 for thread in threads:
     thread.join()
 
-for i in range(4):
+for i in range(1):
     
     secs = [('state','Telangana',1)]
 
