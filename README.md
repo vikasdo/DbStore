@@ -10,8 +10,8 @@
 * To implement make an object which is similar  to code in implementation.py
 
 ### Implementation
-    ![code](https://github.com/vikasdo/DbStore/blob/main/screenshots/code.JPG)
+![code](https://github.com/vikasdo/DbStore/blob/main/screenshots/code.JPG)
 ### output
 
 
-    ![output](https://github.com/vikasdo/DbStore/blob/main/screenshots/Capture.JPG)
+![output](https://github.com/vikasdo/DbStore/blob/main/screenshots/Capture.JPG)
