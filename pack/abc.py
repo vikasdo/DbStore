@@ -1,5 +1,6 @@
 import sys,time,os
 import collections,pathlib
+import time,threading
 import json,time
 class helperfunctions:
 
@@ -52,6 +53,7 @@ class dbstore:
 		self.data=helperfunctions.read_file(self.path)
 		# print(self.data)
 		try:
+
 			if key in self.data:
 				raise Exception(f"The Given key : {key} is created already..")
 		
@@ -59,19 +61,19 @@ class dbstore:
 			if helperfunctions.check_dict_constraints(self.data) and helperfunctions.check_key_constraints(key) and helperfunctions.check_val_constraints(value) :
 				if timeout==0:
 
-					self.data[key]=self.value(value,timeout)
+					self.data[key]=self.value(value, float('inf'))
 				else:
 					self.data[key]=self.value(value,time.time()+timeout)
 
 				helperfunctions.write_file(self.path,self.data)
 				# time.sleep(1)
-
+				print(f"The key {key} is added successfully")
 
 		except Exception as e:
 			print("The error is {}".format(e))
 		
 
-	def read(self,key,value,timeout):
+	def read(self,key,value=None,timeout=None):
 		# print(self.data)
 		self.data=helperfunctions.read_file(self.path)
 
@@ -93,7 +95,7 @@ class dbstore:
 
 
 
-	def  delete(self,key,val,t):
+	def  delete(self,key,val=None,t=None):
 
 		try:
 			self.data=helperfunctions.read_file(self.path)
@@ -112,3 +114,26 @@ class dbstore:
 
 		except Exception as e:
 			print("The error is {} ".format(e))
+
+
+class db():
+        def __init__(self):
+            self.obj=dbstore()
+
+        def create(self,key,val,timeout=0):
+            if val and  key :
+                t = threading.Thread(target=self.obj.add , args=[key,val,timeout])
+                t.start()
+                t.join()
+            else:
+                print("please specify The Key,value You want to create...")
+
+        def read(self,key):
+            tr = threading.Thread(target=self.obj.read , args=[key])
+            tr.start()
+            tr.join()
+
+        def delete(self,key):
+            td = threading.Thread(target=self.obj.delete , args=[key])
+            td.start()
+            td.join()

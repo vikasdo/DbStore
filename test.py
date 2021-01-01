@@ -26,7 +26,7 @@ for thread in threads:
 
 for i in range(4):
     
-    secs = [('name','vikas',113),('street','canal lane',3),('city','hyderabad',2),('phone2',9392322121,322),('states','Telangana',1)]
+    secs = [('name','vikas',0),('street','canal lane',3),('city','hyderabad',2),('phone2',9392322121,322),('states','Telangana',1)]
     # obj.add(secs[i][0],secs[i][1],secs[i][2])
     t = threading.Thread(target=obj.read , args=[secs[i][0],secs[i][1],secs[i][2]])
     t.start()
