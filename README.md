@@ -9,5 +9,5 @@ To implement make an object which is in implementation.py
 
 ### Table of input
 
-![code]()
-![output]()
+![code](https://github.com/vikasdo/DbStore/blob/main/screenshots/code.JPG)
+![output](https://github.com/vikasdo/DbStore/blob/main/screenshots/Capture.JPG)
